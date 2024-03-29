@@ -7,7 +7,7 @@ func (l *LinkedList) Insert(value any, position int) NodeInterface {
 	newNode.SetValue(value)
 
 	if l.Any() {
-		if l.count >= position-1 {
+		if l.hasPosition(position) {
 			oldNode := l.nodes[position-1]
 
 			newNode.SetHead(oldNode.Head())
@@ -20,14 +20,18 @@ func (l *LinkedList) Insert(value any, position int) NodeInterface {
 
 			l.nodes[position-1] = newNode
 
-		} else {
-			l.nodes = append(l.nodes, newNode)
 		}
-	} else {
+	}
+
+	if !l.Any() || !l.hasPosition(position) {
 		l.nodes = append(l.nodes, newNode)
 	}
 
 	l.count++
 
 	return newNode
+}
+
+func (l *LinkedList) hasPosition(position int) bool {
+	return l.count >= position-1
 }
