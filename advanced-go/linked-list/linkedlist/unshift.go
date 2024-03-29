@@ -11,9 +11,9 @@ func (l *LinkedList) Unshift(value any) *Node {
 		newNode.Tail = previousFirst
 	}
 
-	l.Nodes = append([]*Node{newNode}, l.Nodes...)
+	l.nodes = append([]*Node{newNode}, l.nodes...)
 
-	l.Count++
+	l.count++
 
 	return newNode
 }

@@ -10,9 +10,9 @@ func (l *LinkedList) Shift() *Node {
 			firstNode.Tail = nil
 		}
 
-		l.Count--
+		l.count--
 
-		l.Nodes = l.Nodes[1:]
+		l.nodes = l.nodes[1:]
 
 		return firstNode
 	}

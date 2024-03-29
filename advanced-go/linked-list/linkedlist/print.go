@@ -5,7 +5,7 @@ import "fmt"
 func (l *LinkedList) Print() {
 	tree := ""
 
-	for _, node := range l.Nodes {
+	for _, node := range l.nodes {
 		tree += fmt.Sprintf("%v <-> ", node.Value)
 	}
 

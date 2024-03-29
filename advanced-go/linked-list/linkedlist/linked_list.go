@@ -16,8 +16,8 @@ type LinkedListInterface interface {
 
 // NOTE: doubly linked list
 type LinkedList struct {
-	Nodes []*Node
-	Count int
+	nodes []*Node
+	count int
 }
 
 // NOTE: creates a linked list and returns the interface/contract

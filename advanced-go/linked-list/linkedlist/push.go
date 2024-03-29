@@ -10,9 +10,9 @@ func (l *LinkedList) Push(value any) *Node {
 		l.Last().Tail = &newNode
 	}
 
-	l.Nodes = append(l.Nodes, &newNode)
+	l.nodes = append(l.nodes, &newNode)
 
-	l.Count++
+	l.count++
 
 	return &newNode
 }
