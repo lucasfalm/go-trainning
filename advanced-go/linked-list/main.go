@@ -51,4 +51,16 @@ func main() {
 
 	fmt.Println("searching value 5...")
 	linkedList.FindWithPrint(5)
+
+	fmt.Println("shifting...")
+	linkedList.Shift()
+	linkedList.Print()
+
+	fmt.Println("shifting...")
+	linkedList.Shift()
+	linkedList.Print()
+
+	fmt.Println("shifting...")
+	linkedList.Shift()
+	linkedList.Print()
 }
