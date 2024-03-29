@@ -3,12 +3,12 @@ package linkedlist
 import "fmt"
 
 // NOTE: search among the nodes and print result
-func (l *LinkedList) FindWithPrint(value any) *Node {
-	result := l.Find(value)
+func (l *LinkedList) FindWithPrint(value any) (*Node, bool) {
+	result, ok := l.Find(value)
 
 	msg := ""
 
-	if result != nil {
+	if ok {
 		msg += fmt.Sprintf("found node: %v", result.Value)
 
 		if result.Head != nil {
@@ -18,13 +18,13 @@ func (l *LinkedList) FindWithPrint(value any) *Node {
 		if result.Tail != nil {
 			msg += fmt.Sprintf(" | tail: %v", result.Tail.Value)
 		}
-
-		fmt.Println(msg)
 	}
 
-	if result == nil {
-		fmt.Println("node has not been found")
+	if !ok {
+		msg += "node has not been found"
 	}
 
-	return result
+	fmt.Println(msg)
+
+	return result, ok
 }

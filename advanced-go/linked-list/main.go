@@ -63,4 +63,16 @@ func main() {
 	fmt.Println("shifting...")
 	linkedList.Shift()
 	linkedList.Print()
+
+	fmt.Println("inserting at 2 value 19...")
+	linkedList.Insert(19, 2)
+	linkedList.Print()
+
+	fmt.Println("inserting at 1 value 33...")
+	linkedList.Insert(33, 1)
+	linkedList.Print()
+
+	fmt.Println("inserting at 99 value 999...")
+	linkedList.Insert(999, 99)
+	linkedList.Print()
 }

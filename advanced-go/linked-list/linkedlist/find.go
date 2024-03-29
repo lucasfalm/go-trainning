@@ -1,14 +1,14 @@
 package linkedlist
 
 // NOTE: search among the nodes
-func (l *LinkedList) Find(value any) *Node {
+func (l *LinkedList) Find(value any) (*Node, bool) {
 	if l.Any() {
 		for _, node := range l.Nodes {
 			if node.Value == value {
-				return node
+				return node, true
 			}
 		}
 	}
 
-	return nil
+	return nil, false
 }
