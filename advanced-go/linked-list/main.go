@@ -3,11 +3,11 @@ package main
 import (
 	"fmt"
 
-	linkedlist "github.com/lucasfalm/go-training/advanced-go/linked-list/linkedlist"
+	"github.com/lucasfalm/go-training/advanced-go/linked-list/linkedlist/doubly"
 )
 
 var (
-	linkedList = linkedlist.NewLinkedList()
+	linkedList = doubly.NewLinkedList()
 )
 
 func main() {

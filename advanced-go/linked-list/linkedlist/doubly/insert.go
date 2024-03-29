@@ -1,12 +1,14 @@
-package linkedlist
+package doubly
+
+import "github.com/lucasfalm/go-training/advanced-go/linked-list/linkedlist"
 
 // NOTE: insert the node at the position
-func (l *LinkedList) Insert(value any, position int) NodeInterface {
-	newNode := NewNode()
+func (l *DoublyLinkedList) Insert(value any, position int) linkedlist.NodeInterface {
+	newNode := linkedlist.NewNode()
 
 	newNode.SetValue(value)
 
-	if l.Any() && l.hasPosition(position) {
+	if l.hasPosition(position) {
 		oldNode := l.nodes[position-1]
 
 		newNode.SetHead(oldNode.Head())
@@ -27,6 +29,6 @@ func (l *LinkedList) Insert(value any, position int) NodeInterface {
 	return newNode
 }
 
-func (l *LinkedList) hasPosition(position int) bool {
+func (l *DoublyLinkedList) hasPosition(position int) bool {
 	return l.count >= position-1
 }

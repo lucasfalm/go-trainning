@@ -1,8 +1,10 @@
-package linkedlist
+package doubly
+
+import "github.com/lucasfalm/go-training/advanced-go/linked-list/linkedlist"
 
 // NOTE: insert as the last node
-func (l *LinkedList) Push(value any) NodeInterface {
-	newNode := NewNode()
+func (l *DoublyLinkedList) Push(value any) linkedlist.NodeInterface {
+	newNode := linkedlist.NewNode()
 
 	newNode.SetValue(value)
 

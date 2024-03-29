@@ -1,9 +1,13 @@
-package linkedlist
+package doubly
 
-import "fmt"
+import (
+	"fmt"
+
+	"github.com/lucasfalm/go-training/advanced-go/linked-list/linkedlist"
+)
 
 // NOTE: search among the nodes and print result
-func (l *LinkedList) FindWithPrint(value any) (NodeInterface, bool) {
+func (l *DoublyLinkedList) FindWithPrint(value any) (linkedlist.NodeInterface, bool) {
 	result, ok := l.Find(value)
 
 	msg := ""
