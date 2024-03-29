@@ -6,24 +6,19 @@ func (l *LinkedList) Insert(value any, position int) NodeInterface {
 
 	newNode.SetValue(value)
 
-	if l.Any() {
-		if l.hasPosition(position) {
-			oldNode := l.nodes[position-1]
+	if l.Any() && l.hasPosition(position) {
+		oldNode := l.nodes[position-1]
 
-			newNode.SetHead(oldNode.Head())
-			newNode.SetTail(oldNode)
-			oldNode.SetHead(newNode)
+		newNode.SetHead(oldNode.Head())
+		newNode.SetTail(oldNode)
+		oldNode.SetHead(newNode)
 
-			oldNodes := l.nodes[position-1:]
+		oldNodes := l.nodes[position-1:]
 
-			l.nodes = append(l.nodes[:position], oldNodes...)
+		l.nodes = append(l.nodes[:position], oldNodes...)
 
-			l.nodes[position-1] = newNode
-
-		}
-	}
-
-	if !l.Any() || !l.hasPosition(position) {
+		l.nodes[position-1] = newNode
+	} else {
 		l.nodes = append(l.nodes, newNode)
 	}
 
