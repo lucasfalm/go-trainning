@@ -6,7 +6,7 @@ func (l *LinkedList) Print() {
 	tree := ""
 
 	for _, node := range l.nodes {
-		tree += fmt.Sprintf("%v <-> ", node.Value)
+		tree += fmt.Sprintf("%v <-> ", node.Value())
 	}
 
 	if len(tree) > 0 {

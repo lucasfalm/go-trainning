@@ -2,21 +2,21 @@ package linkedlist
 
 type LinkedListInterface interface {
 	Any() bool
-	FindWithPrint(any) (*Node, bool)
-	Find(any) (*Node, bool)
-	First() *Node
-	Last() *Node
-	Insert(any, int) *Node
-	Pop() *Node
+	FindWithPrint(any) (NodeInterface, bool)
+	Find(any) (NodeInterface, bool)
+	First() NodeInterface
+	Last() NodeInterface
+	Insert(any, int) NodeInterface
+	Pop() NodeInterface
 	Print()
-	Push(any) *Node
-	Shift() *Node
-	Unshift(any) *Node
+	Push(any) NodeInterface
+	Shift() NodeInterface
+	Unshift(any) NodeInterface
 }
 
 // NOTE: doubly linked list
 type LinkedList struct {
-	nodes []*Node
+	nodes []NodeInterface
 	count int
 }
 

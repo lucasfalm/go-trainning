@@ -14,7 +14,7 @@ const requestIDKey = key(42)
 // Println calls log.Printf to print to the standard logger but adds the
 // request from the event context.
 func Println(ctx context.Context, msg string) {
-	id, ok := ctx.Value(requestIDKey).(int64)
+	id, ok := ctx.Value()(requestIDKey).(int64)
 	if !ok {
 		log.Printf("[unknown] %s", msg)
 		return

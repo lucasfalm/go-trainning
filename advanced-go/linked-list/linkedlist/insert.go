@@ -1,16 +1,18 @@
 package linkedlist
 
 // NOTE: insert the node at the position
-func (l *LinkedList) Insert(value any, position int) *Node {
-	newNode := &Node{Value: value}
+func (l *LinkedList) Insert(value any, position int) NodeInterface {
+	newNode := NewNode()
+
+	newNode.SetValue(value)
 
 	if l.Any() {
 		if l.count >= position-1 {
 			oldNode := l.nodes[position-1]
 
-			newNode.Head = oldNode.Head
-			newNode.Tail = oldNode
-			oldNode.Head = newNode
+			newNode.SetHead(oldNode.Head())
+			newNode.SetTail(oldNode)
+			oldNode.SetHead(newNode)
 
 			oldNodes := l.nodes[position-1:]
 

@@ -1,7 +1,20 @@
 package linkedlist
 
 type Node struct {
-	Head  *Node
-	Tail  *Node
-	Value any
+	head  NodeInterface
+	tail  NodeInterface
+	value any
+}
+
+type NodeInterface interface {
+	Head() NodeInterface
+	SetHead(NodeInterface)
+	Tail() NodeInterface
+	SetTail(NodeInterface)
+	Value() any
+	SetValue(any)
+}
+
+func NewNode() NodeInterface {
+	return &Node{}
 }
