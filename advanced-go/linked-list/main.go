@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	linkedList := linkedlist.LinkedList{}
+	var linkedList = linkedlist.NewLinkedList()
 
 	fmt.Println("pushing 32")
 	linkedList.Push(32)
