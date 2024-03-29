@@ -6,9 +6,17 @@ import (
 	linkedlist "github.com/lucasfalm/go-training/advanced-go/linked-list/linkedlist"
 )
 
-func main() {
-	var linkedList = linkedlist.NewLinkedList()
+var (
+	linkedList = linkedlist.NewLinkedList()
+)
 
+func main() {
+	// examplesOne()
+
+	examplesTwo()
+}
+
+func examplesOne() {
 	fmt.Println("pushing 32")
 	linkedList.Push(32)
 	linkedList.Print()
@@ -75,4 +83,20 @@ func main() {
 	fmt.Println("inserting at 99 value 999...")
 	linkedList.Insert(999, 99)
 	linkedList.Print()
+}
+
+func examplesTwo() {
+	fmt.Println("populating linked list...")
+	linkedList.Push(1)
+	linkedList.Push(2)
+	linkedList.Push(3)
+	linkedList.Push(4)
+	linkedList.Push(5)
+	linkedList.Push(6)
+	linkedList.Print()
+
+	n, ok := linkedList.Find(1)
+	if ok {
+		n.Print()
+	}
 }

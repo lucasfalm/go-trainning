@@ -13,6 +13,7 @@ type NodeInterface interface {
 	SetTail(NodeInterface)
 	Value() any
 	SetValue(any)
+	Print()
 }
 
 func NewNode() NodeInterface {
