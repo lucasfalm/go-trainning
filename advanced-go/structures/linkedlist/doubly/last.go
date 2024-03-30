@@ -7,7 +7,7 @@ import (
 // NOTE: shows the last node
 func (l *DoublyLinkedList) Last() node.NodeInterface {
 	if l.Any() {
-		return l.nodes[len(l.nodes)-1]
+		return l.nodes[l.count-1]
 	}
 
 	return nil

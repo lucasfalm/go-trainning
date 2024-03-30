@@ -8,17 +8,21 @@ import (
 func NonSynchronized(countTo int) {
 	wg := &sync.WaitGroup{}
 
-	for number := 0; number <= countTo; number++ {
+	counter := 0
+
+	for i := 1; i <= countTo; i++ {
 		wg.Add(1)
 
-		go printNonSynchronized(number, wg)
+		go addNonSynchronized(&counter, wg)
 	}
 
-	wg.Wait()
+	fmt.Printf("total counter: %v\n", counter)
 }
 
-func printNonSynchronized(number int, wg *sync.WaitGroup) {
+func addNonSynchronized(counter *int, wg *sync.WaitGroup) {
 	defer wg.Done()
 
-	fmt.Printf("number %v\n", number)
+	*counter++
+
+	// fmt.Printf("counter %v\n", *counter)
 }

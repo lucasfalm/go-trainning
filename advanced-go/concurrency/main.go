@@ -8,15 +8,15 @@ import (
 
 func main() {
 	fmt.Println("non-sync:")
-	synchronize.NonSynchronized(10)
+	synchronize.NonSynchronized(1000)
 
 	fmt.Println("---- x ----- x -----")
 
 	fmt.Println("using mutex:")
-	synchronize.UsingMutex(10)
+	synchronize.UsingMutex(1000)
 
 	fmt.Println("---- x ----- x -----")
 
 	fmt.Println("using channels:")
-	synchronize.UsingChannels(10)
+	synchronize.UsingChannels(1000)
 }

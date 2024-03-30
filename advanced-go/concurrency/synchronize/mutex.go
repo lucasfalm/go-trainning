@@ -9,24 +9,25 @@ func UsingMutex(countTo int) {
 	wg := sync.WaitGroup{}
 	mu := sync.Mutex{}
 
-	count := 0
+	counter := 0
 
-	for number := 0; number <= countTo; number++ {
+	for i := 1; i <= countTo; i++ {
 		wg.Add(1)
 
-		go printMutex(&count, &wg, &mu)
+		go addMutex(&counter, &wg, &mu)
 	}
 
 	wg.Wait()
+
+	fmt.Printf("total count: %v\n", counter)
 }
 
-func printMutex(number *int, wg *sync.WaitGroup, mu *sync.Mutex) {
+func addMutex(counter *int, wg *sync.WaitGroup, mu *sync.Mutex) {
 	defer mu.Unlock()
 	defer wg.Done()
 
 	mu.Lock()
+	*counter++
 
-	fmt.Printf("number %v\n", *number)
-
-	*number++
+	// fmt.Printf("counter %v\n", *counter)
 }
