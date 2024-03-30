@@ -25,21 +25,21 @@ func TestPush(t *testing.T) {
 	})
 
 	t.Run("a nil object", func(t *testing.T) {
-		setup()
+		withSetup(t, func(t *testing.T) {
+			assert.Equal(t, false, dll.Any())
 
-		assert.Equal(t, false, dll.Any())
+			result := dll.Push(nil)
 
-		result := dll.Push(nil)
+			assert.Implements(t, (*node.NodeInterface)(nil), result)
 
-		assert.Implements(t, (*node.NodeInterface)(nil), result)
+			assert.Equal(t, true, dll.Any())
 
-		assert.Equal(t, true, dll.Any())
+			assert.Equal(t, nil, result.Head())
 
-		assert.Equal(t, nil, result.Head())
+			assert.Equal(t, nil, result.Tail())
 
-		assert.Equal(t, nil, result.Tail())
-
-		assert.Equal(t, nil, result.Value())
+			assert.Equal(t, nil, result.Value())
+		})
 	})
 
 	t.Run("multiple pushes", func(t *testing.T) {
