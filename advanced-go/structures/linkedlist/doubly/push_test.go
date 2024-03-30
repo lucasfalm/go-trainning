@@ -18,7 +18,9 @@ func TestPush(t *testing.T) {
 		assert.Equal(t, true, dll.Any())
 
 		assert.Equal(t, nil, result.Head())
+
 		assert.Equal(t, nil, result.Tail())
+
 		assert.Equal(t, "string", result.Value())
 	})
 
@@ -32,7 +34,9 @@ func TestPush(t *testing.T) {
 		assert.Equal(t, true, dll.Any())
 
 		assert.Equal(t, nil, result.Head())
+
 		assert.Equal(t, nil, result.Tail())
+
 		assert.Equal(t, nil, result.Value())
 	})
 
