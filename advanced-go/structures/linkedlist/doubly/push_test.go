@@ -9,36 +9,38 @@ import (
 
 func TestPush(t *testing.T) {
 	t.Run("a string object", func(t *testing.T) {
-		assert.Equal(t, false, dll.Any())
+		setup()
+
+		assert.False(t, dll.Any())
 
 		result := dll.Push("string")
 
 		assert.Implements(t, (*node.NodeInterface)(nil), result)
 
-		assert.Equal(t, true, dll.Any())
+		assert.True(t, dll.Any())
 
-		assert.Equal(t, nil, result.Head())
+		assert.Nil(t, result.Head())
 
-		assert.Equal(t, nil, result.Tail())
+		assert.Nil(t, result.Tail())
 
 		assert.Equal(t, "string", result.Value())
 	})
 
 	t.Run("a nil object", func(t *testing.T) {
 		withSetup(t, func(t *testing.T) {
-			assert.Equal(t, false, dll.Any())
+			assert.False(t, dll.Any())
 
 			result := dll.Push(nil)
 
 			assert.Implements(t, (*node.NodeInterface)(nil), result)
 
-			assert.Equal(t, true, dll.Any())
+			assert.True(t, dll.Any())
 
-			assert.Equal(t, nil, result.Head())
+			assert.Nil(t, result.Head())
 
-			assert.Equal(t, nil, result.Tail())
+			assert.Nil(t, result.Tail())
 
-			assert.Equal(t, nil, result.Value())
+			assert.Nil(t, result.Value())
 		})
 	})
 
@@ -52,11 +54,11 @@ func TestPush(t *testing.T) {
 
 		assert.Implements(t, (*node.NodeInterface)(nil), resultOne)
 
-		assert.Equal(t, true, dll.Any())
+		assert.True(t, dll.Any())
 
-		assert.Equal(t, nil, resultOne.Head())
+		assert.Nil(t, resultOne.Head())
 
-		assert.Equal(t, nil, resultOne.Tail())
+		assert.Nil(t, resultOne.Tail())
 
 		assert.Equal(t, 1, resultOne.Value())
 
@@ -69,7 +71,7 @@ func TestPush(t *testing.T) {
 
 		assert.Equal(t, resultTwo, resultOne.Tail())
 
-		assert.Equal(t, nil, resultTwo.Tail())
+		assert.Nil(t, resultTwo.Tail())
 
 		assert.Equal(t, 2, resultTwo.Value())
 
@@ -80,7 +82,7 @@ func TestPush(t *testing.T) {
 
 		assert.Equal(t, resultTwo, resultThree.Head())
 
-		assert.Equal(t, nil, resultThree.Tail())
+		assert.Nil(t, resultThree.Tail())
 
 		assert.Equal(t, resultThree, resultTwo.Tail())
 

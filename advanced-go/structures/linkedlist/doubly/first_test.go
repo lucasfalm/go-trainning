@@ -13,7 +13,7 @@ func TestFirst(t *testing.T) {
 
 		result := dll.First()
 
-		assert.Equal(t, nil, result)
+		assert.Nil(t, result)
 	})
 
 	t.Run("when there are nodes", func(t *testing.T) {

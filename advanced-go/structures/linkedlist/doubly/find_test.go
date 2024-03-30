@@ -13,8 +13,8 @@ func TestFind(t *testing.T) {
 
 		result, ok := dll.Find(1)
 
-		assert.Equal(t, false, ok)
-		assert.Equal(t, nil, result)
+		assert.False(t, ok)
+		assert.Nil(t, result)
 	})
 
 	t.Run("when there are nodes but none that matches", func(t *testing.T) {
@@ -24,8 +24,8 @@ func TestFind(t *testing.T) {
 
 		result, ok := dll.Find(1)
 
-		assert.Equal(t, false, ok)
-		assert.Equal(t, result, nil)
+		assert.False(t, ok)
+		assert.Nil(t, result)
 	})
 
 	t.Run("when there are nodes and a match", func(t *testing.T) {
@@ -35,7 +35,7 @@ func TestFind(t *testing.T) {
 
 		result, ok := dll.Find(1)
 
-		assert.Equal(t, true, ok)
+		assert.True(t, ok)
 		assert.Implements(t, (*node.NodeInterface)(nil), result)
 	})
 }

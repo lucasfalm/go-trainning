@@ -16,8 +16,7 @@ func setup() {
 	dll = &DoublyLinkedList{}
 }
 
-func teardown() {
-}
+func teardown() {}
 
 func withSetup(t *testing.T, testFunc func(t *testing.T)) {
 	setup()
