@@ -33,5 +33,5 @@ func printChannel(ch chan *int) {
 	// 			 acquire the channel and change the counter
 	*counter++
 
-	// fmt.Printf("counter %v\n", *counter)
+	fmt.Printf("#%v\n", *counter)
 }

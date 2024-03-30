@@ -9,11 +9,11 @@ import (
 )
 
 var (
-	ll linkedlist.LinkedListInterface
+	dll linkedlist.LinkedListInterface
 )
 
 func setup() {
-	ll = NewLinkedList()
+	dll = &DoublyLinkedList{}
 }
 
 func TestMain(m *testing.M) {
