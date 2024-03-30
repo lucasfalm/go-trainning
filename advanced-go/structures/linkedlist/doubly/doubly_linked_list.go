@@ -1,10 +1,13 @@
 package doubly
 
-import "github.com/lucasfalm/go-training/advanced-go/linked-list/linkedlist"
+import (
+	"github.com/lucasfalm/go-training/advanced-go/structures/linkedlist"
+	"github.com/lucasfalm/go-training/advanced-go/structures/linkedlist/node"
+)
 
 // NOTE: doubly linked list
 type DoublyLinkedList struct {
-	nodes []linkedlist.NodeInterface
+	nodes []node.NodeInterface
 	count int
 }
 

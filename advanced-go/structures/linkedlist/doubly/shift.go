@@ -1,9 +1,11 @@
 package doubly
 
-import "github.com/lucasfalm/go-training/advanced-go/linked-list/linkedlist"
+import (
+	"github.com/lucasfalm/go-training/advanced-go/structures/linkedlist/node"
+)
 
 // NOTE: remove the first node
-func (l *DoublyLinkedList) Shift() linkedlist.NodeInterface {
+func (l *DoublyLinkedList) Shift() node.NodeInterface {
 	if l.Any() {
 		firstNode := l.First()
 

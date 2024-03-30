@@ -1,9 +1,11 @@
 package doubly
 
-import "github.com/lucasfalm/go-training/advanced-go/linked-list/linkedlist"
+import (
+	"github.com/lucasfalm/go-training/advanced-go/structures/linkedlist/node"
+)
 
 // NOTE: remove the last node
-func (l *DoublyLinkedList) Pop() linkedlist.NodeInterface {
+func (l *DoublyLinkedList) Pop() node.NodeInterface {
 	if l.Any() {
 		poppedNode := l.nodes[l.count-1]
 

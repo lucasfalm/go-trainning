@@ -3,11 +3,11 @@ package doubly
 import (
 	"fmt"
 
-	"github.com/lucasfalm/go-training/advanced-go/linked-list/linkedlist"
+	"github.com/lucasfalm/go-training/advanced-go/structures/linkedlist/node"
 )
 
 // NOTE: search among the nodes and print result
-func (l *DoublyLinkedList) FindWithPrint(value any) (linkedlist.NodeInterface, bool) {
+func (l *DoublyLinkedList) FindWithPrint(value any) (node.NodeInterface, bool) {
 	result, ok := l.Find(value)
 
 	msg := ""

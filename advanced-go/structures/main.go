@@ -3,11 +3,11 @@ package main
 import (
 	"fmt"
 
-	"github.com/lucasfalm/go-training/advanced-go/linked-list/factory"
+	structuresFactory "github.com/lucasfalm/go-training/advanced-go/structures/factory"
 )
 
 var (
-	ll = factory.DoublyLinkedList()
+	ll = structuresFactory.DoublyLinkedList()
 )
 
 func main() {
