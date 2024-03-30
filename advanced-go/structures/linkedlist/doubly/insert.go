@@ -11,18 +11,29 @@ func (l *DoublyLinkedList) Insert(value any, position int) node.NodeInterface {
 	newNode.SetValue(value)
 
 	if l.hasPosition(position) {
-		oldNode := l.nodes[position-1]
+		if position > 0 {
+			position = position - 1
+		}
+
+		oldNode := l.nodes[position]
 
 		newNode.SetHead(oldNode.Head())
 		newNode.SetTail(oldNode)
 		oldNode.SetHead(newNode)
 
-		oldNodes := l.nodes[position-1:]
+		oldNodes := l.nodes[position:]
 
 		l.nodes = append(l.nodes[:position], oldNodes...)
 
-		l.nodes[position-1] = newNode
+		l.nodes[position] = newNode
 	} else {
+		lastNode := l.Last()
+
+		if lastNode != nil {
+			lastNode.SetTail(newNode)
+			newNode.SetHead(lastNode)
+		}
+
 		l.nodes = append(l.nodes, newNode)
 	}
 
@@ -32,5 +43,5 @@ func (l *DoublyLinkedList) Insert(value any, position int) node.NodeInterface {
 }
 
 func (l *DoublyLinkedList) hasPosition(position int) bool {
-	return l.count >= position-1
+	return l.count >= position
 }
