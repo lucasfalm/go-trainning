@@ -24,6 +24,8 @@ func TestPush(t *testing.T) {
 		assert.Equal(t, "string", result.Value())
 	})
 
+	dll = &DoublyLinkedList{}
+
 	t.Run("a nil object", func(t *testing.T) {
 		assert.Equal(t, false, dll.Any())
 
@@ -39,6 +41,8 @@ func TestPush(t *testing.T) {
 
 		assert.Equal(t, nil, result.Value())
 	})
+
+	dll = &DoublyLinkedList{}
 
 	t.Run("multiple pushes", func(t *testing.T) {
 		assert.Equal(t, false, dll.Any())

@@ -16,6 +16,9 @@ func setup() {
 	dll = &DoublyLinkedList{}
 }
 
+func tearDown() {
+}
+
 func TestMain(m *testing.M) {
 	// Call setup function before running tests
 	setup()
@@ -24,6 +27,7 @@ func TestMain(m *testing.M) {
 	exitCode := m.Run()
 
 	// Perform teardown actions here if needed
+	tearDown()
 
 	// Exit with the same exit code as the tests
 	// This ensures proper exit code propagation
