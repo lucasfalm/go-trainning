@@ -3,10 +3,27 @@ package main
 import (
 	"fmt"
 
+	"github.com/lucasfalm/go-training/advanced-go/design-patterns/builder"
 	"github.com/lucasfalm/go-training/advanced-go/design-patterns/decorator"
 )
 
 func main() {
+	// showDecorator()
+	showBuilder()
+}
+
+func showBuilder() {
+	burger := builder.OrderBurger()
+
+	// NOTE: the builder is the ability to build complex objects by
+	// 			 calling methods that will handle the complexity behind
+	// 			 and they allow concatenation (calling one method on top of the other's return)
+	burger.WithCheese().WithTomato().WithKetchup().DoubleBurger()
+
+	fmt.Printf("burger: %v - total of: %v\n", burger.Ingredients, burger.Price)
+}
+
+func showDecorator() {
 	var (
 		// NOTE: food is an interface, which means it does not
 		// 			 matter the concrete type, it just need to satisfy the food interface
