@@ -24,5 +24,7 @@ func TestFirst(t *testing.T) {
 		result := dll.First()
 
 		assert.Implements(t, (*node.NodeInterface)(nil), result)
+
+		assert.NotNil(t, result)
 	})
 }

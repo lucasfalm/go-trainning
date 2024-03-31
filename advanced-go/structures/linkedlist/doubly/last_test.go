@@ -23,6 +23,7 @@ func TestLast(t *testing.T) {
 		result := dll.Last()
 
 		assert.NotNil(t, result)
+
 		assert.Equal(t, "hello", result.Value())
 	})
 }

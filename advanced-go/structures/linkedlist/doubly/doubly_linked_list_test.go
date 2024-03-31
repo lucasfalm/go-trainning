@@ -45,4 +45,6 @@ func TestNewLinkedList(t *testing.T) {
 	result := NewLinkedList()
 
 	assert.Implements(t, (*linkedlist.LinkedListInterface)(nil), result)
+
+	assert.NotNil(t, result)
 }

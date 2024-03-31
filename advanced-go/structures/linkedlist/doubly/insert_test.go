@@ -15,8 +15,11 @@ func TestInsert(t *testing.T) {
 		result := dll.Insert(1, 0)
 
 		assert.NotNil(t, result)
+
 		assert.Equal(t, previousNodeAtPosition, result.Tail())
+
 		assert.Equal(t, result, previousNodeAtPosition.Head())
+
 		assert.Equal(t, 1, result.Value())
 	})
 
@@ -28,8 +31,11 @@ func TestInsert(t *testing.T) {
 		result := dll.Insert(2, 2)
 
 		assert.NotNil(t, result)
+
 		assert.Equal(t, result, firstNode.Tail())
+
 		assert.Equal(t, firstNode, result.Head())
+
 		assert.Equal(t, 2, result.Value())
 	})
 
@@ -39,7 +45,9 @@ func TestInsert(t *testing.T) {
 		result := dll.Insert(2, 100)
 
 		assert.NotNil(t, result)
+
 		assert.Equal(t, result, dll.First())
+
 		assert.Equal(t, 2, result.Value())
 	})
 }
