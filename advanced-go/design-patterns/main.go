@@ -34,7 +34,7 @@ func showBuilder() {
 func showDecorator() {
 	var (
 		// NOTE: food is an interface, which means it does not
-		// 			 matter the concrete type, it just need to satisfy the food interface
+		// matter the concrete type, it just need to satisfy the food interface
 		food decorator.Food
 	)
 
@@ -95,7 +95,7 @@ func showObserver() {
 	c <- true
 
 	// NOTE: the same goroutine cannot send and receive, so it will
-	// 			 block here until another goroutine sends a signal back
+	// block here until another goroutine sends a signal back
 	<-c
 }
 
