@@ -24,8 +24,8 @@ func showBuilder() {
 	burger := builder.OrderBurger()
 
 	// NOTE: the builder is the ability to build complex objects by
-	// 			 calling methods that will handle the complexity behind
-	// 			 and they allow concatenation (calling one method on top of the other's return)
+	// calling methods that will handle the complexity behind
+	// and they allow concatenation (calling one method on top of the other's return)
 	burger.WithCheese().WithTomato().WithKetchup().DoubleBurger()
 
 	fmt.Printf("burger: %v - total of: %v\n", burger.Ingredients, burger.Price)
