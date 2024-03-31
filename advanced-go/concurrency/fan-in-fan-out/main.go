@@ -55,7 +55,7 @@ func main() {
 	in := processTwo(p1r)
 
 	// NOTE: this is glueing the results from the several goroutines that
-	// sent a message on the channel
+	// sent a message in the channel
 	p2r := processP2rResults(in)
 
 	processThree(p2r)
@@ -76,6 +76,8 @@ func processP2rResults(in <-chan *Item) []*Item {
 
 	items := []*Item{}
 
+	// NOTE: actively listening on the channel for new results
+	// each goroutine will finish and publish on the channel independently
 	for item := range in {
 		items = append(items, item)
 	}
