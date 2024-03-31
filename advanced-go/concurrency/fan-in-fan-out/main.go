@@ -45,7 +45,7 @@ func processThree(items []*Item) {
 }
 
 func main() {
-	processTwoPartitionSize = 500
+	processTwoPartitionSize = 30
 
 	p1r := processOne()
 
@@ -72,16 +72,15 @@ func executePartitionProcessTwo(out chan<- *Item, wg *sync.WaitGroup) {
 
 // NOTE: can only read from the channel (<- chan *Item)
 func processP2rResults(in <-chan *Item) []*Item {
-	fmt.Println("started reading process #2 results")
+	fmt.Println("started reading sub processes #2 results")
 
 	items := []*Item{}
 
-	// NOTE: actively listening on the channel for new results
-	// each goroutine will finish and publish on the channel independently
 	for item := range in {
 		items = append(items, item)
 	}
 
-	fmt.Println("finished reading process #2 results")
+	fmt.Println("finished reading sub processes #2 results")
+
 	return items
 }
