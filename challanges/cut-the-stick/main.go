@@ -56,10 +56,7 @@ func cutTheSticks(arr []int32) []int32 {
 				} else {
 					p2++
 				}
-			}
-
-			// NOTE: when P2 cannot move or only one number left
-			if len(arr) > 0 && (p2 > len(arr)-1) {
+			} else {
 				result = append(result, int32(len(arr)))
 
 				p1 = 0
