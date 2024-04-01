@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 func main() {
-	arr := []int32{8, 6, 5, 3, 2, 2}
+	arr := []int32{8, 8, 14, 10, 3, 5, 14, 12}
 
 	fmt.Println(arr)
 	fmt.Printf("cut: %v\n", cutTheSticks(arr))
@@ -51,10 +51,6 @@ func cutTheSticks(arr []int32) []int32 {
 
 				arr[p2] -= min
 
-				if len(arr) == 1 {
-					arr = []int32{}
-				}
-
 				if len(arr) > 0 && arr[p2] <= 0 {
 					arr = append(arr[:p2], arr[p2+1:]...)
 				} else {
@@ -63,7 +59,7 @@ func cutTheSticks(arr []int32) []int32 {
 			}
 
 			// NOTE: when P2 cannot move or only one number left
-			if len(arr) > 0 && (p2 > len(arr)-1 || len(arr) == 1) {
+			if len(arr) > 0 && (p2 > len(arr)-1) {
 				result = append(result, int32(len(arr)))
 
 				p1 = 0
