@@ -7,17 +7,27 @@ import (
 	"time"
 
 	"github.com/lucasfalm/go-training/advanced-go/design-patterns/builder"
+	builderv2 "github.com/lucasfalm/go-training/advanced-go/design-patterns/builder/v2"
 	"github.com/lucasfalm/go-training/advanced-go/design-patterns/decorator"
 	"github.com/lucasfalm/go-training/advanced-go/design-patterns/observer"
 )
 
 func main() {
-	showObserver()
+	// showObserver()
 
 	// showDecorator()
 
 	// showBuilder()
 
+	showBuilderV2()
+}
+
+func showBuilderV2() {
+	defaultServer := builderv2.NewServer()
+	customServer := builderv2.NewServer(builderv2.WithTLS, builderv2.WithID("my ID"))
+
+	fmt.Printf("default server: %+v\n", defaultServer)
+	fmt.Printf("custom server: %+v\n", customServer)
 }
 
 func showBuilder() {

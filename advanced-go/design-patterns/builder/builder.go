@@ -12,31 +12,31 @@ func OrderBurger() *Burger {
 	}
 }
 
-func (x *Burger) WithCheese() *Burger {
-	x.Price += 1.50
-	x.Ingredients = append(x.Ingredients, "cheese")
+func (b *Burger) WithCheese() *Burger {
+	b.Price += 1.50
+	b.Ingredients = append(b.Ingredients, "cheese")
 
-	// NOTE: return 'x' is the beauty of builder (allowing method call concatenation on the return)
-	return x
+	// NOTE: return 'b' is the beauty of builder (allowing method call concatenation on the return)
+	return b
 }
 
-func (x *Burger) WithTomato() *Burger {
-	x.Price += 0.30
-	x.Ingredients = append(x.Ingredients, "tomato")
+func (b *Burger) WithTomato() *Burger {
+	b.Price += 0.30
+	b.Ingredients = append(b.Ingredients, "tomato")
 
-	return x
+	return b
 }
 
-func (x *Burger) DoubleBurger() *Burger {
-	x.Price += 5.00
-	x.Ingredients = append(x.Ingredients, "meat")
+func (b *Burger) DoubleBurger() *Burger {
+	b.Price += 5.00
+	b.Ingredients = append(b.Ingredients, "meat")
 
-	return x
+	return b
 }
 
-func (x *Burger) WithKetchup() *Burger {
-	x.Price += 0.20
-	x.Ingredients = append(x.Ingredients, "ketchup")
+func (b *Burger) WithKetchup() *Burger {
+	b.Price += 0.20
+	b.Ingredients = append(b.Ingredients, "ketchup")
 
-	return x
+	return b
 }
