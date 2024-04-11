@@ -7,7 +7,6 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-
 func TestSaySomethingNow(t *testing.T) {
 	var (
 		expect      = "hey"
@@ -35,7 +34,7 @@ func TestSaySomethingNow(t *testing.T) {
 }
 
 /*
-	We use benchmark to validate which solution is more performatic
+We use benchmark to validate which solution performs the best
 */
 func BenchmarkSaySomethingNow(b *testing.B) {
 	for i := 0; i < b.N; i++ {

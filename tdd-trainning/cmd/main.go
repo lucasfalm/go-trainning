@@ -19,7 +19,7 @@ Functional test between all (POST /new-user with json, and test the result)
 
 ---------------------------
 
-2) Integration tests -> test the integration (interaction) between all the components, not mocking the functions/methods, make sure all diferent layers, artefacts and components are all integrated well
+2) Integration tests -> test the integration (interaction) between all the components, not mocking the functions/methods, make sure all different layers, artefact and components are all integrated well
 
 
 ---------------------------
@@ -38,7 +38,7 @@ Unit
 
 Concepts:
 White Box
-Access to private components (such as varriables, methods, functions, and so on)
+Access to private components (such as variables, methods, functions, and so on)
 (e.g our test is in the same package)
 
 Black Box
@@ -46,7 +46,7 @@ Access to public components
 
 ---------------------------
 
-Fases of tests:
+Phases of tests:
 Init - setup
 Execution - call the method
 Validation - check if the result is the same as expected
@@ -54,7 +54,7 @@ Tear Down - clear
 
 ---------------------------
 
-Each clausule return from a method or function in production code must have an test case
+Each 'return' from a method or function in production code must have an test case
 */
 
 func main() {
